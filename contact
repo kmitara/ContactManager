@@ -1,0 +1,27 @@
+class ContactManager:
+    def __init__(self):
+        self.contacts = []
+
+    def add_contact(self, name, email, phone):
+        contact = {"name": name, "email": email, "phone": phone}
+        self.contacts.append(contact)
+        print(f"Contact '{name}' added successfully.")
+
+    def view_contacts(self):
+        if not self.contacts:
+            print("No contacts added.")
+        else:
+            print("Contacts:")
+            for contact in self.contacts:
+                print(f"Name: {contact['name']}")
+                print(f"Email: {contact['email']}")
+                print(f"Phone: {contact['phone']}")
+                print()
+
+if __name__ == '__main__':
+    contact_manager = ContactManager()
+
+    contact_manager.add_contact("John Doe", "john@example.com", "1234567890")
+    contact_manager.add_contact("Jane Smith", "jane@example.com", "9876543210")
+
+    contact_manager.view_contacts()
